@@ -1,5 +1,5 @@
 import streamlit as st 
-import joblib,os
+#import joblib,os
 import spacy
 nlp = spacy.load('en_core_web_sm')
 import pandas as pd
@@ -9,7 +9,7 @@ matplotlib.use("Agg")
 from PIL import Image
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 #from summarizer import Summarizer
-import folium
+#import folium
 import numpy as np
 import nltk
 from string import digits
@@ -179,7 +179,7 @@ def main():
         if choice2 == "WordCloud":
             c_text = raw_text
             #plt.figure(figsize=[70,50])
-            maskArray = np.array(Image.open("C:/Users/NAKKANA1/OneDrive - Novartis Pharma AG/Desktop/aws_study/streamlit/wordcloudsummy/mask/comment.png"))
+            maskArray = np.array(Image.open("comment.png"))
             wordcloud = WordCloud(max_font_size=200,max_words=3000, margin=10, background_color='white', mask = maskArray, contour_width=3,contour_color='black',
                                   scale=3, relative_scaling = 0.5, width=1900, height=1900,random_state=1).generate(c_text)
             plt.imshow(wordcloud,interpolation='bilinear')
@@ -191,7 +191,7 @@ def main():
             for i in range(0,len(c_text)):
                 c_text[i] = " ".join(c_text[i])
             Bigram_Freq = nltk.FreqDist(c_text)
-            maskArray = np.array(Image.open("C:/Users/NAKKANA1/OneDrive - Novartis Pharma AG/Desktop/aws_study/streamlit/wordcloudsummy/mask/comment.png"))
+            maskArray = np.array(Image.open("comment.png"))
 
             #bigram_wordcloud = WordCloud(random_state = 21).generate_from_frequencies(Bigram_Freq)
             #plt.figure(figsize = (50,25))
@@ -215,7 +215,7 @@ def main():
             for i in range(0,len(c_text)):
                 c_text[i] = " ".join(c_text[i])
             trigram_Freq = nltk.FreqDist(c_text)
-            maskArray = np.array(Image.open("C:/Users/NAKKANA1/OneDrive - Novartis Pharma AG/Desktop/aws_study/streamlit/wordcloudsummy/mask/comment.png"))
+            maskArray = np.array(Image.open("comment.png"))
             #bigram_wordcloud = WordCloud(random_state = 21).generate_from_frequencies(Bigram_Freq)
             #plt.figure(figsize = (50,25))
             trigram_wordcloud = WordCloud(max_font_size=150,max_words=200, margin=10, background_color='white', mask = maskArray, contour_width=3,contour_color='black',
@@ -315,7 +315,7 @@ def main():
                 result = get_text(raw_url)
                 c_text = result
                 #plt.figure(figsize=[70,50])
-                maskArray = np.array(Image.open("C:/Users/NAKKANA1/OneDrive - Novartis Pharma AG/Desktop/aws_study/streamlit/wordcloudsummy/mask/comment.png"))
+                maskArray = np.array(Image.open("comment.png"))
                 wordcloud = WordCloud(max_font_size=200,max_words=3000, margin=10, background_color='white', mask = maskArray, contour_width=3,contour_color='black',
                                       scale=3, relative_scaling = 0.5, width=1900, height=1900,random_state=1).generate(c_text)
                 plt.imshow(wordcloud,interpolation='bilinear')
@@ -329,7 +329,7 @@ def main():
                 for i in range(0,len(c_text)):
                     c_text[i] = " ".join(c_text[i])
                 Bigram_Freq_u = nltk.FreqDist(c_text)
-                maskArray = np.array(Image.open("C:/Users/NAKKANA1/OneDrive - Novartis Pharma AG/Desktop/aws_study/streamlit/wordcloudsummy/mask/comment.png"))
+                maskArray = np.array(Image.open("comment.png"))
                     
                     #bigram_wordcloud = WordCloud(random_state = 21).generate_from_frequencies(Bigram_Freq)
                     #plt.figure(figsize = (50,25))
@@ -347,7 +347,7 @@ def main():
                 for i in range(0,len(c_text)):
                     c_text[i] = " ".join(c_text[i])
                 trigram_Freq_u = nltk.FreqDist(c_text)
-                maskArray = np.array(Image.open("C:/Users/NAKKANA1/OneDrive - Novartis Pharma AG/Desktop/aws_study/streamlit/wordcloudsummy/mask/comment.png"))
+                maskArray = np.array(Image.open("comment.png"))
                 
             #bigram_wordcloud = WordCloud(random_state = 21).generate_from_frequencies(Bigram_Freq)
             #plt.figure(figsize = (50,25))
